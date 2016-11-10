@@ -1,0 +1,27 @@
+<ion-view>
+
+  <ion-nav-title>Timetracker - Login</ion-nav-title>
+
+  <ion-content>
+
+
+
+
+      <div class="card">
+          <div class="item">
+              <button class="button button-block button-positive" ng-click="vm.scan()">
+                  <i class="icon ion-qr-scanner"></i>&nbsp;
+                  Inquadra il QRCode
+              </button>
+          </div>
+
+          <div class="item item-text-wrap">
+              {{vm.scanResults}}
+          </div>
+      </div>
+
+
+
+  </ion-content>
+
+</ion-view>

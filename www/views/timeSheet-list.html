@@ -1,0 +1,37 @@
+<ion-view ng-init="vm.getAll()">
+
+  <ion-nav-title>Timetracker - LISTA ATTIVIT&Agrave;</ion-nav-title>
+
+  <ion-content>
+
+    <div class="list card">
+
+      <div ng-repeat="value in vm.timesheetList  track by $index">
+
+        <div class="item row"  ng-class-odd="'item-stable'" ng-class-even="'item-light'">
+          <a class="button button-full" href="#/timeSheet/{{value._id}}" ng-class="value.status">
+            <div>Data: {{value.from | dateFilter:'onlyDate'}}</div>
+            <div ng-show="value.to">Durata: {{value.duration | timeFilter}}</div>
+          {{value.status | statusFilter}}
+
+          </a>
+        </div>
+
+      </div>
+
+      <div class="item" ng-show="vm.hasMorePages">
+        <a class="button button-block button-positive" ng-click="vm.getAll()">
+          CARICA ALTRI RISULTATI
+        </a>
+      </div>
+
+      <div class="item">
+        <a class="button button-block button-dark" href="#/">
+          INDIETRO
+        </a>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,79 @@
+<ion-view>
+
+  <ion-nav-title>Timetracker - Home</ion-nav-title>
+
+  <ion-content>
+
+    <!-- LOGGED USER -->
+    <div ng-show="vm.isLogged">
+
+      <div class="list card">
+
+        <div class="item item-text-wrap">
+          Ciao <b>{{vm.fullName}}</b>,<br>
+          grazie a questa app puoi comunicare a <b>{{vm.company}}</b> le tue attivit&agrave;.<br><br>
+          da qui puoi:<br><br>
+        </div>
+
+        <a ng-click="vm.startTimesheet()" class="item item-icon-left item-positive" ng-hide="vm.openTimeSheetFound">
+          <i class="icon ion-flash"></i>
+          Iniziare una Attivit&agrave;
+        </a>
+
+        <a href="{{vm.openTimeSheetLink}}" class="item item-icon-left item-energized" ng-show="vm.openTimeSheetFound">
+          <i class="icon ion-flash-off"></i>
+          Termina Attivit&agrave;
+        </a>
+
+        <a href="#/afterwardsTimeSheet" class="item item-icon-left item-calm">
+          <i class="icon ion-clock"></i>
+          Inserire una Attivit&agrave; gi&agrave terminata
+        </a>
+
+        <a href="#/timeSheet" class="item item-icon-left item-balanced">
+          <i class="icon ion-eye"></i>
+          Guardare le tue Attivit&agrave;
+        </a>
+
+        <a href="#/suggestion" class="item item-icon-left item-royal">
+          <i class="icon ion-chatboxes"></i>
+          Consigliarci come migliorare l'app
+        </a>
+
+        <a href="#/logout" class="item item-icon-left item-assertive">
+          <i class="icon ion-power"></i>
+          Uscire dall'App
+        </a>
+
+      </div>
+
+    </div>
+    <!-- LOGGED USER -->
+
+
+    <!-- WELCOME PAGE -->
+    <div ng-show="!vm.isLogged">
+
+      <div class="list card">
+        <a href="#/login" class="item item-icon-left item-energized">
+          <i class="icon ion-log-in"></i>
+          Login
+        </a>
+
+        <a ng-click="vm.website()" class="item item-icon-left  item-positive">
+          <i class="icon ion-information-circled"></i>
+          Visita il sito
+        </a>
+
+        <a ng-click="vm.contact()" class="item item-icon-left  item-balanced">
+          <i class="icon ion-chatboxes"></i>
+          Contattaci
+        </a>
+      </div>
+
+    </div>
+    <!-- WELCOME PAGE -->
+
+  </ion-content>
+
+</ion-view>

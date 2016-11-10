@@ -1,0 +1,38 @@
+<ion-view>
+
+  <ion-nav-title>Timetracker - Suggerimenti</ion-nav-title>
+
+  <ion-content>
+
+    <div class="list card">
+
+    <div class="item">
+      Aiutaci a semplificare l'app.
+    </div>
+
+    <div class="item">
+
+         <textarea ng-model="vm.message" class="txtArea" rows="6" placeholder="clicca qui per scrivere il tuo messaggio"></textarea>
+
+    </div>
+
+    <div class="item" >
+      <button class="button button-full  button-positive" ng-click="vm.send()" ng-disabled="!vm.message.length">
+        INVIA
+      </button>
+    </div>
+
+    <div class="item" >
+      <a class="button button-full  button-dark" href="#/">
+        INDIETRO
+      </a>
+    </div>
+
+    </div>
+
+
+
+
+  </ion-content>
+
+</ion-view>

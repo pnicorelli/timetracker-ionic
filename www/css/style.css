@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+.alert-text {
+  background-color: #DE1C1C;
+  color: white;
+}
+
+.started {
+  background-color: #33CD5F;
+  color: white;
+  width:100%;
+}
+
+
+.closed {
+  background-color: #EF473A;
+  color: white;
+  width:100%;
+}
+
+
+.afterwards {
+  background-color: #FFC900;
+  color: white;
+  width:100%;
+}
+
+.txtArea{
+  background: #f7f7f7;
+  width:100%;
+
+}

@@ -1,0 +1,44 @@
+<ion-view ng-init="">
+
+  <ion-nav-title>Timetracker - Inserisci Attivit&agrave;</ion-nav-title>
+
+  <ion-content  ng-cloak>
+
+    <div class="list card">
+
+
+      <div class="item  item-text-wrap" >
+        Clicca sull'<b>Orario di Inizio</b> e sull'<b>Orario di Fine</b> attivit&agrave e poi <b>INVIA</b>.
+      </div>
+
+
+      <div class="item" ion-datetime-picker ng-model="vm.afFrom" data-title="'Orario di Inizio'" ng-change="vm.checkCanAddAfterward()">
+        <label>Orario di Inizio:</label>
+          {{vm.afFrom| date: "dd/MM/yyyy H:mm"}}
+      </div>
+
+      <div class="item" ion-datetime-picker ng-model="vm.afTo" data-title="'Orario di Fine'" ng-change="vm.checkCanAddAfterward()">
+        <label>Orario di Fine:</label>
+          {{vm.afTo| date: "dd/MM/yyyy H:mm"}}
+      </div>
+
+
+
+      <div class="item">
+        <button class="button button-full button-positive" ng-click="vm.addAfterward()" ng-disabled="!vm.canAddAfterward">
+          INVIA
+        </button>
+      </div>
+
+
+      <div class="item">
+        <a class="button button-full button-dark" href="#/">
+          INDIETRO
+        </a>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>

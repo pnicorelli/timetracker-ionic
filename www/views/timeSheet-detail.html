@@ -1,0 +1,98 @@
+<ion-view ng-init="vm.getOne()">
+
+  <ion-nav-title>Timetracker - ATTIVIT&Agrave;</ion-nav-title>
+
+  <ion-content>
+
+    <div class="list card">
+
+      <div class="item">
+        <div class="row">
+          <div class="col col-25">
+            <h3>Stato:</h3>
+          </div>
+          <div class="col col-75">
+            <h3>{{vm.timesheet.status | statusFilter}}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <div class="col col-25">
+            <h3>Iniziato il:</h3>
+          </div>
+          <div class="col col-75">
+            <h3>{{vm.timesheet.from | dateFilter}}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" ng-show="!vm.timesheet.to">
+        <button class="button button-full  button-energized" ng-click="vm.closeOne()">
+          Termina Ora
+        </button>
+      </div>
+
+      <div class="item" ng-show="!vm.timesheet.to" ng-hide="vm.closePast">
+        <button class="button button-full  button-royal" ng-click="vm.OpenClosePast()">
+          Ho dimenticato di terminarla
+        </button>
+      </div>
+
+      <div class="item" ng-show="vm.closePast">
+
+        <div class="item" ion-datetime-picker ng-model="vm.closeTo" data-title="'Orario di Fine'">
+          <label>Orario di Fine:</label>
+            {{vm.closeTo| date: "dd/MM/yyyy H:mm"}}
+        </div>
+
+        <button class="button button-full  button-royal" ng-click="vm.closeOnePast()" ng-disabled="!vm.closeTo">
+          Termina
+        </button>
+      </div>
+
+
+      <div class="item" ng-show="vm.timesheet.to">
+        <div class="row">
+          <div class="col col-25">
+            <h3>Finito il:</h3>
+          </div>
+          <div class="col col-75">
+            <h3>{{vm.timesheet.to | dateFilter}}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="item" ng-show="vm.timesheet.to">
+        <div class="row">
+          <div class="col col-25">
+            <h3>Durata:</h3>
+          </div>
+          <div class="col col-75">
+            <h3>{{vm.timesheet.duration | timeFilter}}</h3>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="item" >
+        <a class="button button-full  button-dark" onclick="history.back()">
+          INDIETRO
+        </a>
+      </div>
+
+      <div class="item" >
+        <a class="button button-full button-assertive" ng-click="vm.removeOne()">
+          ELIMINA ATTIVIT&Agrave;
+        </a>
+      </div>
+
+    </div>
+
+
+
+
+  </ion-content>
+
+</ion-view>
